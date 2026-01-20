@@ -1,0 +1,7 @@
+project_id = "bhysuxfrynqogpdcwkzl"
+
+[functions.get-organization-standards]
+verify_jwt = false
+
+[functions.get-organization-employees]
+verify_jwt = false
