@@ -163,6 +163,4 @@ Proprietary project - All rights reserved.
 
 ---
 
-**Project URL**: https://lovable.dev/projects/b2420a30-ca15-444d-9bbe-7f4bad6a975c
-
 **Production**: https://csbg-standards.lovable.app
