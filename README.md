@@ -1,73 +1,168 @@
-# Welcome to your Lovable project
+# CSBG Standards - Compliance Management System
 
-## Project info
+A comprehensive compliance and organizational standards management system, designed to track, monitor, and ensure adherence to regulations and best practices.
 
-**URL**: https://lovable.dev/projects/b2420a30-ca15-444d-9bbe-7f4bad6a975c
+## 📋 Overview
 
-## How can I edit this code?
+CSBG Standards is a web platform that enables organizations to manage their compliance standards, track activities, and maintain evidence records and participation logs.
 
-There are several ways of editing your application.
+### Key Features
 
-**Use Lovable**
+- **Standards Management**: Complete tracking of organizational standards by category
+- **Personalized Dashboard**: Differentiated views for each access level
+- **User System**: Complete management with multiple permission levels
+- **Encrypted Messaging**: Secure communication between organization members
+- **Announcements**: Organizational notifications and communications system
+- **ROMA Reports**: Monitoring and analysis reports
+- **Evidence Upload**: Secure storage of supporting documents
+- **Activity Logs**: Complete record of all system actions
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b2420a30-ca15-444d-9bbe-7f4bad6a975c) and start prompting.
+## 👥 Access Levels
 
-Changes made via Lovable will be committed automatically to this repo.
+| Role | Description |
+|------|-------------|
+| **Master Admin** | Global access to all organizations, admin creation and new organization provisioning |
+| **Admin** | Complete management of their own organization and users |
+| **Compliance Manager** | Standards and compliance management for the organization |
+| **Staff** | Operational access to standards and basic features |
+| **Board Member** | Dashboard and ROMA Reports access for oversight |
 
-**Use your preferred IDE**
+## 🛠️ Technologies Used
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Backend**: Lovable Cloud (Supabase)
+- **Authentication**: Supabase Auth
+- **Database**: PostgreSQL
+- **Storage**: Supabase Storage
+- **Edge Functions**: Deno Runtime
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📁 Project Structure
 
-Follow these steps:
+```
+src/
+├── components/
+│   ├── ui/                    # Base components (shadcn/ui)
+│   ├── standards/             # Standards components
+│   │   └── configs/           # Centralized configurations
+│   └── dashboard/             # Dashboard components
+├── hooks/                     # Custom hooks
+├── integrations/
+│   └── supabase/              # Supabase client and types
+├── lib/                       # Utilities
+├── pages/                     # Application pages
+└── index.css                  # Global styles and tokens
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+supabase/
+└── functions/                 # Edge Functions
+    ├── create-user/
+    ├── delete-user/
+    ├── encrypt-message/
+    └── ...
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or bun
+
+### Installation
+
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🔐 Environment Variables
 
-**Use GitHub Codespaces**
+The project uses the following variables (automatically configured by Lovable Cloud):
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- `VITE_SUPABASE_URL` - Supabase project URL
+- `VITE_SUPABASE_PUBLISHABLE_KEY` - Supabase public key
+- `VITE_SUPABASE_PROJECT_ID` - Project ID
 
-## What technologies are used for this project?
+## 📊 Features by Module
 
-This project is built with:
+### Standards
+- View by category (1.x to 9.x)
+- Compliance status (Compliant, Pending, Submitted, Not Compliant)
+- Evidence upload by participation method
+- Activity and document logs
+- PDF evidence packet generation
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Dashboard
+- Global KPIs (Master Admin)
+- Organizational metrics (Admin/Staff)
+- Progress and compliance charts
 
-## How can I deploy this project?
+### Management (User Management)
+- User CRUD operations
+- Role assignment
+- Email invitations
+- Multi-organization management (Master Admin)
 
-Simply open [Lovable](https://lovable.dev/projects/b2420a30-ca15-444d-9bbe-7f4bad6a975c) and click on Share -> Publish.
+### Inbox (Messages)
+- Encrypted communication (AES-GCM)
+- Unread message indicators
+- Real-time via Supabase Realtime
 
-## Can I connect a custom domain to my Lovable project?
+### Announcements
+- Create communications
+- Organization-scoped or global
+- Notifications with unread indicator
 
-Yes, you can!
+## 🔒 Security
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **RLS (Row Level Security)**: Access policies on all tables
+- **Encryption**: End-to-end encrypted messages
+- **Authentication**: Robust system with email confirmation
+- **Inactivity Timeout**: Automatic logout on inactivity
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📝 Available Scripts
+
+```bash
+npm run dev      # Development server
+npm run build    # Production build
+npm run preview  # Build preview
+npm run lint     # Code verification
+```
+
+## 🌐 Deployment
+
+The project can be published directly through Lovable:
+
+1. Access the Lovable editor
+2. Click **Share** → **Publish**
+3. The app will be available at `https://csbg-standards.lovable.app`
+
+### Custom Domain
+
+To connect a custom domain:
+1. Navigate to **Project** → **Settings** → **Domains**
+2. Click **Connect Domain**
+3. Follow the DNS configuration instructions
+
+## 📄 License
+
+Proprietary project - All rights reserved.
+
+---
+
+**Project URL**: https://lovable.dev/projects/b2420a30-ca15-444d-9bbe-7f4bad6a975c
+
+**Production**: https://csbg-standards.lovable.app
